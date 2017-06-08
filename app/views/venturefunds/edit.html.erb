@@ -9,7 +9,7 @@
 <% end %>
 
 <div class="page-header">
-  <h3>Edit Venturefund #<%= @venturefund.id %></h3>
+  <h3>Edit <%= @venturefund.name %></h3>
 </div>
 
 <div class="row">
@@ -48,7 +48,7 @@
       <!-- Label and input for funding -->
       <div class="form-group">
         <label for="funding" class="control-label">
-          Funding
+          Investment Size (Mn USD)
         </label>
 
         <input type="text" id="funding" name="funding" placeholder="Funding" class="form-control" value="<%= @venturefund.funding %>">
@@ -57,7 +57,7 @@
       <!-- Label and input for industry -->
       <div class="form-group">
         <label for="industry" class="control-label">
-          Industry
+          Invested Industry(ies)
         </label>
 
         <input type="text" id="industry" name="industry" placeholder="Industry" class="form-control" value="<%= @venturefund.industry %>">
@@ -74,17 +74,17 @@
 
       <!-- Label and input for partner -->
       <div class="form-group">
-        <label for="partner" class="control-label">
-          Partner
-        </label>
+        <!-- <label for="partner" class="control-label">
+          Founding Partner
+        </label> -->
 
-        <input type="text" id="partner" name="partner" placeholder="Partner" class="form-control" value="<%= @venturefund.partner %>">
+        <input type="hidden" id="partner" name="partner" placeholder="Founding Partner" class="form-control" value="<%= @current_partner.try(:id) %>">
       </div>
 
       <!-- Label and input for portfolio -->
       <div class="form-group">
         <label for="portfolio" class="control-label">
-          Portfolio
+          Portfolio (no space within a company; space between different companies)
         </label>
 
         <input type="text" id="portfolio" name="portfolio" placeholder="Portfolio" class="form-control" value="<%= @venturefund.portfolio %>">

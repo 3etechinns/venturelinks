@@ -30,10 +30,10 @@
       <!-- Label and input for image_url -->
       <div class="form-group">
         <label for="image_url" class="control-label">
-          Image url
+          Logo url
         </label>
 
-        <input type="text" id="image_url" name="image_url" placeholder="Image url" class="form-control" value="<%= @venturefund.image_url %>">
+        <input type="text" id="image_url" name="image_url" placeholder="Logo url" class="form-control" value="<%= @venturefund.image_url %>">
       </div>
 
       <!-- Label and input for address -->
@@ -48,19 +48,19 @@
       <!-- Label and input for funding -->
       <div class="form-group">
         <label for="funding" class="control-label">
-          Funding
+          Investment Size (Mn USD)
         </label>
 
-        <input type="text" id="funding" name="funding" placeholder="Funding" class="form-control" value="<%= @venturefund.funding %>">
+        <input type="text" id="funding" name="funding" placeholder="Investment Size (Mn USD)" class="form-control" value="<%= @venturefund.funding %>">
       </div>
 
       <!-- Label and input for industry -->
       <div class="form-group">
         <label for="industry" class="control-label">
-          Industry
+          Invested industry(ies)
         </label>
 
-        <input type="text" id="industry" name="industry" placeholder="Industry" class="form-control" value="<%= @venturefund.industry %>">
+        <input type="text" id="industry" name="industry" placeholder="Invested industry(ies)" class="form-control" value="<%= @venturefund.industry %>">
       </div>
 
       <!-- Label and input for intro -->
@@ -74,17 +74,17 @@
 
       <!-- Label and input for partner -->
       <div class="form-group">
-        <label for="partner" class="control-label">
-          Partner
-        </label>
+        <!-- <label for="partner" class="control-label">
+          Founding Partner
+        </label> -->
 
-        <input type="text" id="partner" name="partner" placeholder="Partner" class="form-control" value="<%= @venturefund.partner %>">
+        <input type="hidden" id="partner" name="partner" placeholder="Founding Partner" class="form-control" value="<%= @current_partner.try(:id) %>">
       </div>
 
       <!-- Label and input for portfolio -->
       <div class="form-group">
         <label for="portfolio" class="control-label">
-          Portfolio
+          Portfolio (no space within a company; space between different companies)
         </label>
 
         <input type="text" id="portfolio" name="portfolio" placeholder="Portfolio" class="form-control" value="<%= @venturefund.portfolio %>">

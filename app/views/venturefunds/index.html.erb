@@ -13,7 +13,7 @@
         <th>Name</th>
 
         <th>Investment Size (Mn USD)</th>
-        <th>Invested industry</th>
+        <th>Invested Industry(ies)</th>
         <th>Intro</th>
 
         <th>Actions</th>
@@ -22,7 +22,7 @@
       <% @venturefunds.each do |venturefund| %>
       <tr>
   <td><img src="<%=venturefund.image_url%>"></td>
-        <td><%= venturefund.name %></td>
+        <td><a href="https://www.google.com/#q=<%= venturefund.name %>"><%= venturefund.name %></a></td>
 
 
         <td><%= venturefund.funding %></td>

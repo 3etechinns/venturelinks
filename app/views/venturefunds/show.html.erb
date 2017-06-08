@@ -34,13 +34,13 @@
       <dt>Investment Size (Mn USD)</dt>
       <dd><%= @venturefund.funding %></dd>
 
-      <dt>Invested industry</dt>
+      <dt>Invested Industry(ies)</dt>
       <dd><%= @venturefund.industry %></dd>
 
       <dt>Intro</dt>
       <dd><%= @venturefund.intro %></dd>
 
-      <dt>Partner</dt>
+      <dt>Founding Partner</dt>
       <dd><%= @venturefund.partner %> (<a href="mailto:<%= @venturefund.partner.strip.gsub(/[^a-z0-9\s]/i, "").gsub(" ","") %>@example.com?Subject=Hello%20from%20Venturelinks">Contact</a>)</dd>
 
       <dt>Portfolio</dt>

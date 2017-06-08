@@ -22,7 +22,7 @@
       <% @startups.each do |startup| %>
       <tr>
   <td><img src="<%=startup.image_url%>"></td>
-        <td><%= startup.name %></td>
+    <td><a href="https://www.google.com/#q=<%= startup.name %>"><%= startup.name %></a></td>
 
 
         <td><%= startup.funding %></td>

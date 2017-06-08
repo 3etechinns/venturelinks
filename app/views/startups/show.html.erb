@@ -1,20 +1,37 @@
 <div class="page-header">
-  <h3>Startup #<%= @startup.id %></h3>
+  <h3><img src="<%= @startup.image_url %>"></h3>
 </div>
 
 <div class="row">
   <div class="col-md-12 mb-2">
     <dl class="dl-horizontal">
-      <dt>Name</dt>
-      <dd><%= @startup.name %></dd>
+      <div class="btn-group btn-group-justified">
+        <a href="/startups" class="btn btn-primary">
+          <i class="fa fa-chevron-left"></i>
+        </a>
+          <% if current_founder.try(:startup).try(:id)==@startup.try(:id)%>
+        <a href="/startups/<%= @startup.id %>/edit" class="btn btn-warning">
+          <i class="fa fa-fw fa-edit"></i></a>
+          <%else  %>
+          <%end  %>
+<% if current_founder.try(:startup).try(:id)==@startup.try(:id)%>
+        <a href="/delete_startup/<%= @startup.id %>" class="btn btn-danger" rel="nofollow">
+          <i class="fa fa-trash-o"></i>
+        </a>
+        <%else  %>
+        <%end  %>
+      </div>
 
-      <dt>Image url</dt>
-      <dd><%= @startup.image_url %></dd>
+
+      <dt>Name</dt>
+      <dd><a href="https://www.google.com/#q=<%= @startup.name %>"><%= @startup.name %></a></dd>
+
+
 
       <dt>Address</dt>
       <dd><%= @startup.address %></dd>
 
-      <dt>Funding</dt>
+      <dt>Funding Needed (Mn USD)</dt>
       <dd><%= @startup.funding %></dd>
 
       <dt>Industry</dt>
@@ -24,23 +41,17 @@
       <dd><%= @startup.intro %></dd>
 
       <dt>Founder</dt>
-      <dd><%= @startup.founder %></dd>
+      <%if @current_founder.try(:startup).try(:id)==@startup.id  %>
+<dd><%= @startup.founder+@current_founder.try(:username) %> (<a href="mailto:<%= @startup.name.strip.gsub(/[^a-z0-9\s]/i, "").gsub(" ","") %>@example.com?Subject=Hello%20from%20Venturelinks">Contact</a>)</dd>
 
+      <%else  %>
+        <dd><%= @startup.founder %> (<a href="mailto:<%= @startup.name.strip.gsub(/[^a-z0-9\s]/i, "").gsub(" ","") %>@example.com?Subject=Hello%20from%20Venturelinks">Contact</a>)</dd>
+<%end  %>
       <dt>Description</dt>
       <dd><%= @startup.description %></dd>
 
     </dl>
 
-    <div class="btn-group btn-group-justified">
-      <a href="/startups" class="btn btn-primary">
-        Back
-      </a>
-      <a href="/startups/<%= @startup.id %>/edit" class="btn btn-warning">
-        Edit
-      </a>
-      <a href="/delete_startup/<%= @startup.id %>" class="btn btn-danger" rel="nofollow">
-        Delete
-      </a>
-    </div>
+
   </div>
 </div>

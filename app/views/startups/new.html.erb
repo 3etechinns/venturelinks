@@ -25,15 +25,18 @@
         </label>
 
         <input type="text" id="name" name="name" placeholder="Name" class="form-control" value="<%= @startup.name %>">
+
+
+
       </div>
 
       <!-- Label and input for image_url -->
       <div class="form-group">
         <label for="image_url" class="control-label">
-          Image url
+          Logo url
         </label>
 
-        <input type="text" id="image_url" name="image_url" placeholder="Image url" class="form-control" value="<%= @startup.image_url %>">
+        <input type="text" id="image_url" name="image_url" placeholder="Logo url" class="form-control" value="<%= @startup.image_url %>">
       </div>
 
       <!-- Label and input for address -->
@@ -48,10 +51,10 @@
       <!-- Label and input for funding -->
       <div class="form-group">
         <label for="funding" class="control-label">
-          Funding
+        Funding Needed (Mn USD)
         </label>
 
-        <input type="text" id="funding" name="funding" placeholder="Funding" class="form-control" value="<%= @startup.funding %>">
+        <input type="text" id="funding" name="funding" placeholder="Funding Needed (Mn USD)" class="form-control" value="<%= @startup.funding %>">
       </div>
 
       <!-- Label and input for industry -->
@@ -60,7 +63,7 @@
           Industry
         </label>
 
-        <input type="text" id="industry" name="industry" placeholder="Industry" class="form-control" value="<%= @startup.industry %>">
+    <%= select_tag(:industry, options_from_collection_for_select(Startup.all, :industry, :industry, @startup.industry), :class => "form-control")%>
       </div>
 
       <!-- Label and input for intro -->
@@ -75,10 +78,10 @@
       <!-- Label and input for founder -->
       <div class="form-group">
         <label for="founder" class="control-label">
-          Founder
+          Co-Founder (apart from you)
         </label>
 
-        <input type="text" id="founder" name="founder" placeholder="Founder" class="form-control" value="<%= @startup.founder %>">
+        <input type="text" id="founder" name="founder" placeholder="Co-Founder" class="form-control" value="<%= @startup.founder %>">
       </div>
 
       <!-- Label and input for description -->
