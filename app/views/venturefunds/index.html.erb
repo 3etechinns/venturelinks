@@ -1,0 +1,47 @@
+<div class="page-header">
+  <h1>
+    Venturefunds
+    <a href="/venturefunds/new" class="btn btn-default btn-block"><i class="fa fa-plus"></i></a>
+  </h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+  <th></th>
+        <th>Name</th>
+
+        <th>Investment Size (Mn USD)</th>
+        <th>Invested industry</th>
+        <th>Intro</th>
+
+        <th>Actions</th>
+      </tr>
+
+      <% @venturefunds.each do |venturefund| %>
+      <tr>
+  <td><img src="<%=venturefund.image_url%>"></td>
+        <td><%= venturefund.name %></td>
+
+
+        <td><%= venturefund.funding %></td>
+        <td><%= venturefund.industry %></td>
+        <td><%= truncate(venturefund.intro) %></td>
+
+        <td>
+          <a href="/venturefunds/<%= venturefund.id %>" class="btn btn-primary"><i class="fa fa-chevron-right"></i></a>
+          <% if current_partner.try(:venturefund).try(:id)==venturefund.try(:id)%>
+          <a href="/venturefunds/<%= venturefund.id %>/edit" class="btn btn-warning"><i class="fa fa-fw fa-edit"></i></a>
+          <%else  %>
+  <%end  %>
+                <% if current_partner.try(:venturefund).try(:id)==venturefund.try(:id)%>
+          <a href="/delete_venturefund/<%= venturefund.id %>" class="btn btn-danger" rel="nofollow"><i class="fa fa-trash-o"></i></a>
+          <%else  %>
+<%end  %>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

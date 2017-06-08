@@ -1,0 +1,46 @@
+<div class="page-header">
+  <h3>Startup #<%= @startup.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12 mb-2">
+    <dl class="dl-horizontal">
+      <dt>Name</dt>
+      <dd><%= @startup.name %></dd>
+
+      <dt>Image url</dt>
+      <dd><%= @startup.image_url %></dd>
+
+      <dt>Address</dt>
+      <dd><%= @startup.address %></dd>
+
+      <dt>Funding</dt>
+      <dd><%= @startup.funding %></dd>
+
+      <dt>Industry</dt>
+      <dd><%= @startup.industry %></dd>
+
+      <dt>Intro</dt>
+      <dd><%= @startup.intro %></dd>
+
+      <dt>Founder</dt>
+      <dd><%= @startup.founder %></dd>
+
+      <dt>Description</dt>
+      <dd><%= @startup.description %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/startups" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/startups/<%= @startup.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_startup/<%= @startup.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>

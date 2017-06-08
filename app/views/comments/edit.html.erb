@@ -1,0 +1,73 @@
+<!-- Validation failure messages -->
+<% if @comment.errors.any? %>
+  <% @comment.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Edit Comment #<%= @comment.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/update_comment/<%= @comment.id %>" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for body -->
+      <div class="form-group">
+        <label for="body" class="control-label">
+          Body
+        </label>
+
+        <textarea id="body" name="body" placeholder="Body" class="form-control" rows="3"><%= @comment.body %></textarea>
+      </div>
+
+      <!-- Label and input for startup_id -->
+      <div class="form-group">
+        <label for="startup_id" class="control-label">
+          Startup
+        </label>
+
+        <input type="text" id="startup_id" name="startup_id" placeholder="Startup" class="form-control" value="<%= @comment.startup_id %>">
+      </div>
+
+      <!-- Label and input for founder_id -->
+      <div class="form-group">
+        <label for="founder_id" class="control-label">
+          Founder
+        </label>
+
+        <input type="text" id="founder_id" name="founder_id" placeholder="Founder" class="form-control" value="<%= @comment.founder_id %>">
+      </div>
+
+      <!-- Label and input for venturefund_id -->
+      <div class="form-group">
+        <label for="venturefund_id" class="control-label">
+          Venturefund
+        </label>
+
+        <input type="text" id="venturefund_id" name="venturefund_id" placeholder="Venturefund" class="form-control" value="<%= @comment.venturefund_id %>">
+      </div>
+
+      <!-- Label and input for partner_id -->
+      <div class="form-group">
+        <label for="partner_id" class="control-label">
+          Partner
+        </label>
+
+        <input type="text" id="partner_id" name="partner_id" placeholder="Partner" class="form-control" value="<%= @comment.partner_id %>">
+      </div>
+
+      <button class="btn btn-warning">
+        Update Comment
+      </button>
+      or
+      <a href="/comments/<%= @comment.id %>">Cancel</a>
+    </form>
+  </div>
+</div>

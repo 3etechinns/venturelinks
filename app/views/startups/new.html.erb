@@ -1,0 +1,100 @@
+<!-- Validation failure messages -->
+<% if @startup.errors.any? %>
+  <% @startup.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Add Startup</h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/create_startup" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for name -->
+      <div class="form-group">
+        <label for="name" class="control-label">
+          Name
+        </label>
+
+        <input type="text" id="name" name="name" placeholder="Name" class="form-control" value="<%= @startup.name %>">
+      </div>
+
+      <!-- Label and input for image_url -->
+      <div class="form-group">
+        <label for="image_url" class="control-label">
+          Image url
+        </label>
+
+        <input type="text" id="image_url" name="image_url" placeholder="Image url" class="form-control" value="<%= @startup.image_url %>">
+      </div>
+
+      <!-- Label and input for address -->
+      <div class="form-group">
+        <label for="address" class="control-label">
+          Address
+        </label>
+
+        <input type="text" id="address" name="address" placeholder="Address" class="form-control" value="<%= @startup.address %>">
+      </div>
+
+      <!-- Label and input for funding -->
+      <div class="form-group">
+        <label for="funding" class="control-label">
+          Funding
+        </label>
+
+        <input type="text" id="funding" name="funding" placeholder="Funding" class="form-control" value="<%= @startup.funding %>">
+      </div>
+
+      <!-- Label and input for industry -->
+      <div class="form-group">
+        <label for="industry" class="control-label">
+          Industry
+        </label>
+
+        <input type="text" id="industry" name="industry" placeholder="Industry" class="form-control" value="<%= @startup.industry %>">
+      </div>
+
+      <!-- Label and input for intro -->
+      <div class="form-group">
+        <label for="intro" class="control-label">
+          Intro
+        </label>
+
+        <input type="text" id="intro" name="intro" placeholder="Intro" class="form-control" value="<%= @startup.intro %>">
+      </div>
+
+      <!-- Label and input for founder -->
+      <div class="form-group">
+        <label for="founder" class="control-label">
+          Founder
+        </label>
+
+        <input type="text" id="founder" name="founder" placeholder="Founder" class="form-control" value="<%= @startup.founder %>">
+      </div>
+
+      <!-- Label and input for description -->
+      <div class="form-group">
+        <label for="description" class="control-label">
+          Description
+        </label>
+
+        <textarea id="description" name="description" placeholder="Description" class="form-control" rows="3"><%= @startup.description %></textarea>
+      </div>
+
+      <button class="btn btn-success">
+        Create Startup
+      </button>
+      or
+      <a href="/startups">Cancel</a>
+    </form>
+  </div>
+</div>
