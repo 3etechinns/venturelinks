@@ -9,12 +9,12 @@
         <a href="/startups" class="btn btn-primary">
           <i class="fa fa-chevron-left"></i>
         </a>
-          <% if current_user.id=@startup.User_id%>
+          <% if current_user.id==@startup.User_id%>
         <a href="/startups/<%= @startup.id %>/edit" class="btn btn-warning">
           <i class="fa fa-fw fa-edit"></i></a>
           <%else  %>
           <%end  %>
-    <% if current_user.id=@startup.User_id%>
+    <% if current_user.id==@startup.User_id%>
         <a href="/delete_startup/<%= @startup.id %>" class="btn btn-danger" rel="nofollow">
           <i class="fa fa-trash-o"></i>
         </a>
@@ -42,7 +42,7 @@
 
       <dt>Founder</dt>
 
-        <dd><%= @startup.user.username %> (<a href="mailto:<%= @startup.name.strip.gsub(/[^a-z0-9\s]/i, "").gsub(" ","") %>@example.com?Subject=Hello%20from%20Venturelinks">Contact</a>)</dd>
+        <dd><%= @startup.user.username %> (<a href="mailto:<%= @startup.user.username.strip.gsub(/[^a-z0-9\s]/i, "").gsub(" ","") %>@example.com?Subject=Hello%20from%20Venturelinks">Contact</a>)</dd>
       <dt>Description</dt>
       <dd><%= @startup.description %></dd>
 

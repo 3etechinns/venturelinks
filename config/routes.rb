@@ -2,36 +2,19 @@ Rails.application.routes.draw do
   devise_for :users
   # Routes for the Comment resource:
   # CREATE
-  get "/comments/new", :controller => "comments", :action => "new"
-  post "/create_comment", :controller => "comments", :action => "create"
-
-  # READ
-  get "/comments", :controller => "comments", :action => "index"
-  get "/comments/:id", :controller => "comments", :action => "show"
-
-  # UPDATE
-  get "/comments/:id/edit", :controller => "comments", :action => "edit"
-  post "/update_comment/:id", :controller => "comments", :action => "update"
-
-  # DELETE
-  get "/delete_comment/:id", :controller => "comments", :action => "destroy"
-  #------------------------------
-
-  # Routes for the Cofounding resource:
-  # CREATE
-  get "/cofoundings/new", :controller => "cofoundings", :action => "new"
-  post "/create_cofounding", :controller => "cofoundings", :action => "create"
-
-  # READ
-  get "/cofoundings", :controller => "cofoundings", :action => "index"
-  get "/cofoundings/:id", :controller => "cofoundings", :action => "show"
-
-  # UPDATE
-  get "/cofoundings/:id/edit", :controller => "cofoundings", :action => "edit"
-  post "/update_cofounding/:id", :controller => "cofoundings", :action => "update"
-
-  # DELETE
-  get "/delete_cofounding/:id", :controller => "cofoundings", :action => "destroy"
+  # get "/comments/new", :controller => "comments", :action => "new"
+  # post "/create_comment", :controller => "comments", :action => "create"
+  #
+  # # READ
+  # get "/comments", :controller => "comments", :action => "index"
+  # get "/comments/:id", :controller => "comments", :action => "show"
+  #
+  # # UPDATE
+  # get "/comments/:id/edit", :controller => "comments", :action => "edit"
+  # post "/update_comment/:id", :controller => "comments", :action => "update"
+  #
+  # # DELETE
+  # get "/delete_comment/:id", :controller => "comments", :action => "destroy"
   #------------------------------
 
 
@@ -87,8 +70,6 @@ root 'startups#index'
   # DELETE
   get "/delete_venturefund/:id", :controller => "venturefunds", :action => "destroy"
 
-  devise_for :founders
-  devise_for :partners
 
 
   #------------------------------

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170609024518) do
+ActiveRecord::Schema.define(version: 20170609064651) do
 
   create_table "cofoundings", force: :cascade do |t|
     t.integer  "founder_id"
