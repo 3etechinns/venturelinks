@@ -77,11 +77,11 @@
 
       <!-- Label and input for founder -->
       <div class="form-group">
-        <label for="founder" class="control-label">
-          Co-Founder (apart from you)
-        </label>
+        <!-- <label for="founder" class="control-label">
+          Founder
+        </label> -->
 
-        <input type="text" id="founder" name="founder" placeholder="Co-Founder" class="form-control" value="<%= @startup.founder %>">
+        <input type="hidden" id="founder" name="founder" placeholder="Co-Founder" class="form-control" value="<%= @startup.User_id %>">
       </div>
 
       <!-- Label and input for description -->

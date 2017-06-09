@@ -29,6 +29,7 @@ class StartupsController < ApplicationController
     @startup.intro = params[:intro]
     @startup.founder = params[:founder]
     @startup.description = params[:description]
+    @startup.User_id = current_user.id
 
     save_status = @startup.save
 

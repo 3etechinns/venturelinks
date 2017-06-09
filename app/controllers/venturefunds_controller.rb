@@ -29,6 +29,7 @@ class VenturefundsController < ApplicationController
     @venturefund.intro = params[:intro]
     @venturefund.partner = params[:partner]
     @venturefund.portfolio = params[:portfolio]
+      @venturefund.User_id = current_user.id
 
     save_status = @venturefund.save
 

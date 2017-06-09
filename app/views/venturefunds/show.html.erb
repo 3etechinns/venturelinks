@@ -9,12 +9,12 @@
         <a href="/venturefunds" class="btn btn-primary">
           <i class="fa fa-chevron-left"></i>
         </a>
-          <% if current_partner.try(:venturefund).try(:id)==@venturefund.try(:id)%>
+        <% if current_user.id=@venturefund.User_id%>
         <a href="/venturefunds/<%= @venturefund.id %>/edit" class="btn btn-warning">
           <i class="fa fa-fw fa-edit"></i></a>
           <%else  %>
           <%end  %>
-<% if current_partner.try(:venturefund).try(:id)==@venturefund.try(:id)%>
+        <% if current_user.id=@venturefund.User_id%>
         <a href="/delete_venturefund/<%= @venturefund.id %>" class="btn btn-danger" rel="nofollow">
           <i class="fa fa-trash-o"></i>
         </a>
@@ -41,7 +41,7 @@
       <dd><%= @venturefund.intro %></dd>
 
       <dt>Founding Partner</dt>
-      <dd><%= @venturefund.partner %> (<a href="mailto:<%= @venturefund.partner.strip.gsub(/[^a-z0-9\s]/i, "").gsub(" ","") %>@example.com?Subject=Hello%20from%20Venturelinks">Contact</a>)</dd>
+      <dd><%= @venturefund.user.username %> (<a href="mailto:<%= @venturefund.user.username.strip.gsub(/[^a-z0-9\s]/i, "").gsub(" ","") %>@example.com?Subject=Hello%20from%20Venturelinks">Contact</a>)</dd>
 
       <dt>Portfolio</dt>
       <% @portfoliocompany=@venturefund.portfolio.split %>
